@@ -83,7 +83,16 @@ body {
     font-weight: bold;
 }
 
-
+#app_content {
+    margin: 0 auto;
+    padding-top: 5px;
+    /* width: 980px; */
+    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
 
 
 
