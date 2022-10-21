@@ -83,7 +83,7 @@ body {
     font-weight: bold;
 }
 
-#app_content {
+.app_content {
     margin: 0 auto;
     padding-top: 5px;
     /* width: 980px; */
@@ -95,6 +95,18 @@ body {
     background-image: url(../assets/images/background.png);
     background-size: 100% 100%;
     position:fixed;
+}
+
+.form_login {
+    width: 295px;
+    height: 380px;
+    margin-top: 85px;
+    margin-bottom: 85px;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .copyright {
