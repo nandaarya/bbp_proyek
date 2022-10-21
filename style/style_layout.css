@@ -123,6 +123,15 @@ body {
     text-align: center;
 }
 
+.email {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo_email {
+    
+}
+
 .copyright {
     width: 100%;
     text-align: center;
