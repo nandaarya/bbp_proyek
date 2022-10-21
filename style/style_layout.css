@@ -105,8 +105,22 @@ body {
     background-color: #F6F6F6;
     border-radius: 20px;
     display: flex;
-align-items: center;
-justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo_login {
+    width: 82px;
+    height: 48px;
+}
+
+#text_login {
+    text-align: center;
+}
+
+#text_login2 {
+    text-align: center;
 }
 
 .copyright {
