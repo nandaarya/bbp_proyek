@@ -141,7 +141,16 @@ body {
     color: #000;
     font-weight: bold;
 }
-
+.button_login   {
+    background-size: cover;
+    background-position: center;
+    border: #2F2F2F;
+    border-radius:20px;
+    width: 94px;
+    height: 32px;
+    cursor: pointer;
+    color: blue;
+}
 .text_field_login {
     margin-bottom: 20px;
 }
