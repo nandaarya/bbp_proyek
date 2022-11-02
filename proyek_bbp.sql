@@ -42,7 +42,7 @@ INSERT INTO `login` (`id`, `username`, `password`, `nickname`, `role`) VALUES
 
 CREATE TABLE `barang` (
   `idx` int(11) NOT NULL,
-  `kode` int(15) NOT NULL,
+  `kode` varchar(15) NOT NULL,
   `nama` varchar(55) NOT NULL,
   `merek` varchar(40) NOT NULL,
   `jumlah` int(12) NOT NULL,
@@ -83,7 +83,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
+  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
