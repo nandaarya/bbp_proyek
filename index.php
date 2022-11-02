@@ -3,7 +3,7 @@ session_start();
 include 'dbconnect.php';
 
 // if(isset($_SESSION['role'])){
-// 	header("location:barang");
+// header("location:barang");
 // }
 
 if(isset($_GET['pesan'])){
@@ -21,7 +21,7 @@ if(isset($_GET['pesan'])){
 
 if(isset($_POST['btn-login'])){
  $uname = mysqli_real_escape_string($conn,$_POST['username']);
- $upass = mysqli_real_escape_string($conn,md5($_POST['password']));
+ $upass = mysqli_real_escape_string($conn,$_POST['password']);
 
  // menyeleksi data user dengan username dan password yang sesuai
 $login = mysqli_query($conn,"select * from login where username='$uname' and password='$upass';");
@@ -33,13 +33,13 @@ if($cek > 0){
  
 	$data = mysqli_fetch_assoc($login);
  
- if($data['role']=="stock"){
+ if($data['role']=="admin"){
 		// buat session login dan username
 		$_SESSION['user'] = $data['nickname'];
 		$_SESSION['user_login'] = $data['username'];
 		$_SESSION['id'] = $data['id'];
-		$_SESSION['role'] = "stock";
-		header("location:stock");
+		$_SESSION['role'] = "admin";
+		header("location:barang");
  }
  else{
   header("location:index.php?pesan=gagal");
@@ -54,7 +54,7 @@ if($cek > 0){
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style\style_layout.css">
+	<link rel="stylesheet" href="style\index.css">
 	<title>Inventaris BMN UIN Sunan Kalijaga</title>
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -95,14 +95,14 @@ if($cek > 0){
 				</div>
 
 				<div class="text_field_login">
-					<form action="">
+					<form method="post">
 						<table>
 							<tr>
 								<td>
 									<div class="input-group mb-2 p-1">
 										<span class="input-group-text" id=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
 										</span>
-										<input type="text" class="form-control" placeholder="Username">
+										<input type="text" class="form-control" placeholder="Username" name="username" autofocus>
 									</div>
 								</td>
 							</tr>
@@ -111,7 +111,7 @@ if($cek > 0){
 									<div class="input-group mb-2 p-1">
 										<span class="input-group-text" id=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16"><path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
 										</span>
-										<input type="password" class="form-control" placeholder="Password">
+										<input type="password" class="form-control" placeholder="Password" name="password">
 									</div>
 								</td>
 							</tr>

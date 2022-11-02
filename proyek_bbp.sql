@@ -32,7 +32,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `nickname`, `role`) VALUES
-(7, 'guest', '084e0343a0486ff05530df6c705c8bb4', 'Stock', 'stock');
+(7, 'guest', '084e0343a0486ff05530df6c705c8bb4', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -42,22 +42,22 @@ INSERT INTO `login` (`id`, `username`, `password`, `nickname`, `role`) VALUES
 
 CREATE TABLE `barang` (
   `idx` int(11) NOT NULL,
+  `kode` int(15) NOT NULL,
   `nama` varchar(55) NOT NULL,
-  `jenis` varchar(30) NOT NULL,
-  `merk` varchar(40) NOT NULL,
-  `ukuran` varchar(20) NOT NULL,
-  `stock` int(12) NOT NULL,
-  `satuan` varchar(10) NOT NULL,
-  `lokasi` varchar(55) NOT NULL
+  `merek` varchar(40) NOT NULL,
+  `jumlah` int(12) NOT NULL,
+  `kondisi` varchar(10) NOT NULL,
+  `fakultas` varchar(55) NOT NULL,
+  `lokasi` varchar(55) NOT NULL,
+  `pemakai` varchar(55) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`idx`, `nama`, `jenis`, `merk`, `ukuran`, `stock`, `satuan`, `lokasi`) VALUES
-(243, 'Mata Bor', 'Flame', 'Garryson', '50', 2992, 'Buah', 'PT Willtec'),
-(244, 'Mata Bor', 'Ball Nosed Cone', 'Garryson', '17', 1000, 'Unit', 'PT Wiltec');
+INSERT INTO `barang` (`idx`, `kode`, `nama`, `merek`, `jumlah`, `kondisi`, `fakultas`, `lokasi`, `pemakai`) VALUES
+(1, '3050201003', 'Kursi Kuliah', 'Chitose', '73', 'Baik', 'Sains dan Teknologi', 'Ruang 304', 'Mahasiswa');
 
 -- --------------------------------------------------------
 
