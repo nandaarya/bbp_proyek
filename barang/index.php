@@ -1,3 +1,8 @@
+<?php
+include '../dbconnect.php';
+
+$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx DESC"); // fetch all users data from database
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -25,7 +30,30 @@
 		</div>
 	</div>
 
-	<div>ini home</div>
+	<div>
+		<a href="add.php">Add New User</a><br/><br/>
+		<table width='80%' border=1>
+		<tr>
+			<th>No</th> <th>Kode Barang</th><th>Nama</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Fakultas</th> <th>Lokasi</th> <th>Pemakai</th>
+		</tr>
+		<?php
+		while ($daftar_barang = mysqli_fetch_array($result)) {
+			echo "<tr>";
+			echo "<td>".$daftar_barang['idx']."</td>";
+			echo "<td>".$daftar_barang['kode']."</td>";
+			echo "<td>".$daftar_barang['nama']."</td>";
+			echo "<td>".$daftar_barang['merek']."</td>";
+			echo "<td>".$daftar_barang['jumlah']."</td>";
+			echo "<td>".$daftar_barang['kondisi']."</td>";
+			echo "<td>".$daftar_barang['fakultas']."</td>";
+			echo "<td>".$daftar_barang['lokasi']."</td>";
+			echo "<td>".$daftar_barang['pemakai']."</td>";
+			echo "<td><a href='edit.php?id=$daftar_barang[id]'>Edit</a> | <a href='delete.php?id=$daftar_barang[id]'>Delete</a></td></tr>"
+			;
+		}
+		?>
+		</table>
+	</div>
 
 
 	<!-- Footer -->
