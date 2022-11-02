@@ -1,8 +1,9 @@
 <?php
 // include databse connection file
 include '../dbconnect.php';
-// Check if form submitted insert form data into users table
-if (isset($_POST['submit'])) {
+// Check if form is submitted for user update, then redirect to homepage after update
+if (isset($_POST['update'])) {
+	$idx = $_POST['idx'];
 	$kode = $_POST['kode'];
 	$nama = $_POST['nama'];
 	$merek = $_POST['merek'];
@@ -11,11 +12,27 @@ if (isset($_POST['submit'])) {
 	$fakultas = $_POST['fakultas'];
 	$lokasi = $_POST['lokasi'];
 	$pemakai = $_POST['pemakai'];
-	// Insert user data into table
-	$result = mysqli_query($conn, "INSERT INTO barang(kode,nama,merek,jumlah,kondisi,fakultas,lokasi,pemakai) VALUES('$kode','$nama','$merek','$jumlah','$kondisi','$fakultas','$lokasi','$pemakai')");
-	// // show message when user added
-	// echo "User added successfully";
+	// update user data
+	$result = mysqli_query($conn, "UPDATE barang SET kode='$kode',nama='$nama',merek='$merek',jumlah='$jumlah',kondisi='$kondisi',fakultas='$fakultas',lokasi='$lokasi',pemakai='$pemakai' WHERE idx=$idx");
 	header("Location: index.php");
+}
+?>
+<?php
+// Display selected user data based on id
+// Getting id from url
+$idx = $_GET['idx'];
+// Fetech user data based on id
+$result = mysqli_query($conn, "SELECT * FROM barang WHERE idx=$idx");
+
+while ($daftar_barang = mysqli_fetch_array($result)) {
+	$kode = $daftar_barang['kode'];
+	$nama = $daftar_barang['nama'];
+	$merek = $daftar_barang['merek'];
+	$jumlah = $daftar_barang['jumlah'];
+	$kondisi = $daftar_barang['kondisi'];
+	$fakultas = $daftar_barang['fakultas'];
+	$lokasi = $daftar_barang['lokasi'];
+	$pemakai = $daftar_barang['pemakai'];
 }
 ?>
 <!DOCTYPE html>
@@ -48,43 +65,43 @@ if (isset($_POST['submit'])) {
 	<!-- Body -->
 	<a href="index.php">Go to Home</a>
     <br/><br/>
-    <form action="add.php" method="post" name="input_barang">
+    <form action="edit.php" method="post" name="update_barang">
         <table width="25%" border="0">
 			<tr>
                 <td>Kode Barang</td>
-                <td><input type="text" name="kode"></td>
+                <td><input type="text" name="kode" value=<?php echo $kode;?>></td>
             </tr>
             <tr>
                 <td>Nama</td>
-                <td><input type="text" name="nama"></td>
+                <td><input type="text" name="nama" value=<?php echo $nama;?>></td>
             </tr>
             <tr>
                 <td>Merek</td>
-                <td><input type="text" name="merek"></td>
+                <td><input type="text" name="merek" value=<?php echo $merek;?>></td>
             </tr>
             <tr>
                 <td>Jumlah</td>
-                <td><input type="text" name="jumlah"></td>
+                <td><input type="text" name="jumlah" value=<?php echo $jumlah;?>></td>
             </tr>
 			<tr>
                 <td>Kondisi</td>
-                <td><input type="text" name="kondisi"></td>
+                <td><input type="text" name="kondisi" value=<?php echo $kondisi;?>></td>
             </tr>
 			<tr>
                 <td>Fakultas</td>
-                <td><input type="text" name="fakultas"></td>
+                <td><input type="text" name="fakultas" value=<?php echo $fakultas;?>></td>
             </tr>
 			<tr>
                 <td>Lokasi</td>
-                <td><input type="text" name="lokasi"></td>
+                <td><input type="text" name="lokasi" value=<?php echo $lokasi;?>></td>
             </tr>
 			<tr>
                 <td>Pemakai</td>
-                <td><input type="text" name="pemakai"></td>
+                <td><input type="text" name="pemakai" value=<?php echo $pemakai;?>></td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="submit" name="submit" value="Add"></td>
+                <td><input type="hidden" name="idx" value=<?php echo $_GET['idx'];?>></td>
+                <td><input type="submit" name="update" value="Update"></td>
             </tr>
         </table>
     </form>

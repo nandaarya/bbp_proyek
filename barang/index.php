@@ -1,7 +1,7 @@
 <?php
 include '../dbconnect.php';
 
-$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx DESC"); // fetch all users data from database
+$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch all users data from database
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -48,7 +48,7 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx DESC"); // fetc
 			echo "<td>".$daftar_barang['fakultas']."</td>";
 			echo "<td>".$daftar_barang['lokasi']."</td>";
 			echo "<td>".$daftar_barang['pemakai']."</td>";
-			echo "<td><a href='edit.php?id=$daftar_barang[id]'>Edit</a> | <a href='delete.php?id=$daftar_barang[id]'>Delete</a></td></tr>"
+			echo "<td><a href='edit.php?idx=$daftar_barang[idx]'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
 			;
 		}
 		?>

@@ -32,7 +32,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `nickname`, `role`) VALUES
-(7, 'guest', '084e0343a0486ff05530df6c705c8bb4', 'admin', 'admin');
+(7, 'admin', 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
