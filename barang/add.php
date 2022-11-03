@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 		<a href="index.php">Go to Home</a>
 		<br/><br/>
 		<form action="add.php" method="post" name="input_barang">
-			<table width="100%" border="0">
+			<table border="0">
 				<tr>
 					<td>Kode Barang</td>
 					<td><input type="tel" id="kode" name="kode" pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 					</td>
 				</tr>
 				<tr>
-					<td>Nama</td>
+					<td>Nama Barang</td>
 					<td><input type="text" name="nama"></td>
 				</tr>
 				<tr>
@@ -80,8 +80,28 @@ if (isset($_POST['submit'])) {
 					</td>
 				</tr>
 				<tr>
-					<td>Fakultas</td>
-					<td><input type="text" name="fakultas"></td>
+					<td>Unit / Fakultas</td>
+					<td>
+						<select name="fakultas" id="fakultas">
+							<option value="FAKULTAS ILMU TARBIYAH DAN KEGURUAN">FAKULTAS ILMU TARBIYAH DAN KEGURUAN</option>
+							<option value="FAKULTAS ADAB DAN ILMU BUDAYA">FAKULTAS ADAB DAN ILMU BUDAYA</option>
+							<option value="FAKULTAS EKONOMI DAN BISNIS ISLAM">FAKULTAS EKONOMI DAN BISNIS ISLAM</option>
+							<option value="FAKULTAS SAINS DAN TEKNOLOGI">FAKULTAS SAINS DAN TEKNOLOGI</option>
+							<option value="FAKULTAS USHULUDDIN DAN PEMIKIRAN ISLAM">FAKULTAS USHULUDDIN DAN PEMIKIRAN ISLAM</option>
+							<option value="FAKULTAS DAKWAH DAN KOMUNIKASI">FAKULTAS DAKWAH DAN KOMUNIKASI</option>
+							<option value="FAKULTAS ILMU SOSIAL DAN HUMANIORA">FAKULTAS ILMU SOSIAL DAN HUMANIORA</option>
+							<option value="FAKULTAS SYARI’AH DAN HUKUM">FAKULTAS SYARI’AH DAN HUKUM</option>
+							<option value="PASCASARJANA">PASCASARJANA</option>
+							<option value="UPT PUSAT PERPUSTAKAAN">UPT PUSAT PERPUSTAKAAN</option>
+							<option value="UPT PUSAT PENGEMBANGAN BAHASA">UPT PUSAT PENGEMBANGAN BAHASA</option>
+							<option value="LP2M">LP2M</option>
+							<option value="UPT PUSAT PENGEMBANGAN BISNIS">UPT PUSAT PENGEMBANGAN BISNIS</option>
+							<option value="UPT PUSAT PTIPD">UPT PUSAT PTIPD</option>
+							<option value="ADMISI">ADMISI</option>
+							<option value="LPM">LPM</option>
+							<option value="SPI">SPI</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td>Lokasi</td>
@@ -89,7 +109,12 @@ if (isset($_POST['submit'])) {
 				</tr>
 				<tr>
 					<td>Pemakai</td>
-					<td><input type="text" name="pemakai"></td>
+					<td>
+						<select name="pemakai" id="pemakai">
+							<option value="Mahasiswa">Mahasiswa</option>
+							<option value="Dosen">Dosen</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td></td>

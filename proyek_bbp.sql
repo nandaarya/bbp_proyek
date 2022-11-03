@@ -46,7 +46,7 @@ CREATE TABLE `barang` (
   `nama` varchar(55) NOT NULL,
   `merek` varchar(40) NOT NULL,
   `jumlah` int(12) NOT NULL,
-  `kondisi` varchar(10) NOT NULL,
+  `kondisi` varchar(15) NOT NULL,
   `fakultas` varchar(55) NOT NULL,
   `lokasi` varchar(55) NOT NULL,
   `pemakai` varchar(55) NOT NULL
@@ -57,7 +57,7 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`idx`, `kode`, `nama`, `merek`, `jumlah`, `kondisi`, `fakultas`, `lokasi`, `pemakai`) VALUES
-(1, '3050201003', 'Kursi Kuliah', 'Chitose', '73', 'Baik', 'Sains dan Teknologi', 'Ruang 304', 'Mahasiswa');
+(1, '3.05.02.01.003', 'Kursi Kuliah', 'Chitose', '73', 'Baik', 'Sains dan Teknologi', 'Ruang 304', 'Mahasiswa');
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `barang`
