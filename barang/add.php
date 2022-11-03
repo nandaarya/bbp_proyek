@@ -1,6 +1,8 @@
 <?php
 // include databse connection file
 include '../dbconnect.php';
+
+$operasi = $_GET['operasi'];
 // Check if form submitted insert form data into users table
 if (isset($_POST['submit'])) {
 	$kode = $_POST['kode'];
@@ -46,7 +48,8 @@ if (isset($_POST['submit'])) {
 	</div>
 
 	<!-- Body -->
-	<div class="center">
+	<div class="input">
+		<h1 style="text-align: center;"><?php echo $operasi;?></h1>
 		<a href="index.php">Go to Home</a>
 		<br/><br/>
 		<form action="add.php" method="post" name="input_barang">

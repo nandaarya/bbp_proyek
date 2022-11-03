@@ -155,6 +155,15 @@ body {
     margin-bottom: 20px;
 }
 
+/* Input */
+.input {
+    width: 980px;
+    height: auto;
+    background-color: rgb(255, 216, 144);
+    margin: 0 auto;
+    padding: 0;
+}
+
 .copyright {
     width: 100%;
     text-align: center;

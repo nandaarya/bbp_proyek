@@ -31,7 +31,7 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch
 	</div>
 
 	<div class="center">
-		<table width='100%' border=1>
+		<table class="tabel" style="text-align: center;" width='100%' border=1>
 		<tr>
 			<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th> <th>Operasi</th>
 		</tr>
@@ -48,13 +48,13 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch
 			echo "<td>".$daftar_barang['fakultas']."</td>";
 			echo "<td>".$daftar_barang['lokasi']."</td>";
 			echo "<td>".$daftar_barang['pemakai']."</td>";
-			echo "<td><a href='edit.php?idx=$daftar_barang[idx]'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
+			echo "<td><a href='edit.php?idx=$daftar_barang[idx]&operasi=Ubah Data'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
 			;
 			$nomor++;
 		}
 		?>
 		</table>
-		<a href="add.php">Add New User</a><br/><br/>
+		<a href="add.php?operasi=Tambah Data">Add New User</a><br/><br/>
 	</div>
 
 
