@@ -69,7 +69,9 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
         <table width="25%" border="0">
 			<tr>
                 <td>Kode Barang</td>
-                <td><input type="text" name="kode" value=<?php echo $kode;?>></td>
+                <td><input type="tel" id="kode" name="kode" value=<?php echo $kode;?> pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
+					<small>Format: X.XX.XX.XXX</small>
+				</td>
             </tr>
             <tr>
                 <td>Nama Barang</td>

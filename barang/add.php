@@ -46,48 +46,52 @@ if (isset($_POST['submit'])) {
 	</div>
 
 	<!-- Body -->
-	<a href="index.php">Go to Home</a>
-    <br/><br/>
-    <form action="add.php" method="post" name="input_barang">
-        <table width="25%" border="0">
-			<tr>
-                <td>Kode Barang</td>
-                <td><input type="text" name="kode"></td>
-            </tr>
-            <tr>
-                <td>Nama</td>
-                <td><input type="text" name="nama"></td>
-            </tr>
-            <tr>
-                <td>Merek</td>
-                <td><input type="text" name="merek"></td>
-            </tr>
-            <tr>
-                <td>Jumlah</td>
-                <td><input type="text" name="jumlah"></td>
-            </tr>
-			<tr>
-                <td>Kondisi</td>
-                <td><input type="text" name="kondisi"></td>
-            </tr>
-			<tr>
-                <td>Fakultas</td>
-                <td><input type="text" name="fakultas"></td>
-            </tr>
-			<tr>
-                <td>Lokasi</td>
-                <td><input type="text" name="lokasi"></td>
-            </tr>
-			<tr>
-                <td>Pemakai</td>
-                <td><input type="text" name="pemakai"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" name="submit" value="Add"></td>
-            </tr>
-        </table>
-    </form>
+	<div class="center">
+		<a href="index.php">Go to Home</a>
+		<br/><br/>
+		<form action="add.php" method="post" name="input_barang">
+			<table width="100%" border="0">
+				<tr>
+					<td>Kode Barang</td>
+					<td><input type="tel" id="kode" name="kode" pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
+					<small>Format: X.XX.XX.XXX</small>
+					</td>
+				</tr>
+				<tr>
+					<td>Nama</td>
+					<td><input type="text" name="nama"></td>
+				</tr>
+				<tr>
+					<td>Merek</td>
+					<td><input type="text" name="merek"></td>
+				</tr>
+				<tr>
+					<td>Jumlah</td>
+					<td><input type="text" name="jumlah"></td>
+				</tr>
+				<tr>
+					<td>Kondisi</td>
+					<td><input type="text" name="kondisi"></td>
+				</tr>
+				<tr>
+					<td>Fakultas</td>
+					<td><input type="text" name="fakultas"></td>
+				</tr>
+				<tr>
+					<td>Lokasi</td>
+					<td><input type="text" name="lokasi"></td>
+				</tr>
+				<tr>
+					<td>Pemakai</td>
+					<td><input type="text" name="pemakai"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit" value="Add"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 
 	<!-- Footer -->
 	<div class="copyright" style="background-color: #f6f6f6; border-top: 1px solid #dddddd;"> 
