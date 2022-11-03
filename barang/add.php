@@ -71,7 +71,13 @@ if (isset($_POST['submit'])) {
 				</tr>
 				<tr>
 					<td>Kondisi</td>
-					<td><input type="text" name="kondisi"></td>
+					<td>
+						<select name="kondisi" id="kondisi">
+							<option value="Baik">Baik</option>
+							<option value="Rusak Ringan">Rusak Ringan</option>
+							<option value="Rusak Berat">Rusak Berat</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td>Fakultas</td>

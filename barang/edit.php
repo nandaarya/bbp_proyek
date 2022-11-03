@@ -87,7 +87,13 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
             </tr>
 			<tr>
                 <td>Kondisi</td>
-                <td><input type="text" name="kondisi" value=<?php echo $kondisi;?>></td>
+                <td>
+					<select name="kondisi" id="kondisi" value=<?php echo $kondisi;?>>
+						<option value="Baik">Baik</option>
+						<option value="Rusak Ringan">Rusak Ringan</option>
+						<option value="Rusak Berat">Rusak Berat</option>
+					</select>
+				</td>
             </tr>
 			<tr>
                 <td>Fakultas</td>
