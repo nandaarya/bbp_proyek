@@ -72,7 +72,7 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
                 <td><input type="text" name="kode" value=<?php echo $kode;?>></td>
             </tr>
             <tr>
-                <td>Nama</td>
+                <td>Nama Barang</td>
                 <td><input type="text" name="nama" value=<?php echo $nama;?>></td>
             </tr>
             <tr>

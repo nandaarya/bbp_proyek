@@ -31,15 +31,15 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch
 	</div>
 
 	<div>
-		<a href="add.php">Add New User</a><br/><br/>
 		<table width='80%' border=1>
 		<tr>
-			<th>No</th> <th>Kode Barang</th><th>Nama</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Fakultas</th> <th>Lokasi</th> <th>Pemakai</th>
+			<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th>
 		</tr>
 		<?php
+		$nomor = 1;
 		while ($daftar_barang = mysqli_fetch_array($result)) {
 			echo "<tr>";
-			echo "<td>".$daftar_barang['idx']."</td>";
+			echo "<td>".$nomor."</td>";
 			echo "<td>".$daftar_barang['kode']."</td>";
 			echo "<td>".$daftar_barang['nama']."</td>";
 			echo "<td>".$daftar_barang['merek']."</td>";
@@ -50,9 +50,11 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch
 			echo "<td>".$daftar_barang['pemakai']."</td>";
 			echo "<td><a href='edit.php?idx=$daftar_barang[idx]'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
 			;
+			$nomor++;
 		}
 		?>
 		</table>
+		<a href="add.php">Add New User</a><br/><br/>
 	</div>
 
 
