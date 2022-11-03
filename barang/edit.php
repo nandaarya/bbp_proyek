@@ -83,7 +83,7 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
             </tr>
             <tr>
                 <td>Jumlah</td>
-                <td><input type="text" name="jumlah" value=<?php echo $jumlah;?>></td>
+                <td><input type="number" min="1" name="jumlah" value=<?php echo $jumlah;?>></td>
             </tr>
 			<tr>
                 <td>Kondisi</td>

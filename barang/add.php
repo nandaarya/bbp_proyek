@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
 				</tr>
 				<tr>
 					<td>Jumlah</td>
-					<td><input type="text" name="jumlah"></td>
+					<td><input type="number" min="1" name="jumlah"></td>
 				</tr>
 				<tr>
 					<td>Kondisi</td>
