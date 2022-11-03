@@ -30,8 +30,8 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch
 		</div>
 	</div>
 
-	<div>
-		<table width='80%' border=1>
+	<div class="center">
+		<table width='100%' border=1>
 		<tr>
 			<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th>
 		</tr>
