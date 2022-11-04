@@ -1,7 +1,26 @@
 <?php
 include '../dbconnect.php';
 
-$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch all users data from database
+if (isset($_POST['submit'])) {
+	$filter_fakultas = $_POST['pilihan_fakultas'];
+}
+
+if ($filter_fakultas == "all") {
+	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+} else {
+	$result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$filter_fakultas'");
+}
+
+// switch ($filter_fakultas) {
+//   case "$filter_fakultas":
+// 	$result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$filter_fakultas'");
+// 	break;
+//   default:
+//   	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+// }
+
+// $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch all users data from database
+$result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORDER BY fakultas ASC");
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -31,6 +50,19 @@ $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch
 	</div>
 
 	<div class="center">
+		<div class="search-box">
+			<form action="index.php" method="post">
+				<select id="filter" name="pilihan_fakultas">
+					<option value="all">SEMUA UNIT DAN FAKULTAS</option>
+					<?php
+					while($res = mysqli_fetch_array($result_fakultas)) {
+						echo "<option value='".$res['fakultas']."'>".$res['fakultas']."</option>";
+					}
+					?>
+				</select>
+				<input type="submit" name="submit" value="Filter">
+			</form>
+		</div>
 		<table class="tabel" style="text-align: center;" width='100%' border=1>
 		<tr>
 			<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th> <th>Operasi</th>
