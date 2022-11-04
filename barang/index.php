@@ -3,14 +3,14 @@ include '../dbconnect.php';
 
 if (isset($_POST['submit'])) {
 	$filter_fakultas = $_POST['pilihan_fakultas'];
-}
-
-if ($filter_fakultas == "all") {
-	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+	if ($filter_fakultas == "all") {
+		$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+	} else {
+		$result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$filter_fakultas'");
+	}	
 } else {
-	$result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$filter_fakultas'");
+	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
 }
-
 // switch ($filter_fakultas) {
 //   case "$filter_fakultas":
 // 	$result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$filter_fakultas'");
