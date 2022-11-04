@@ -50,7 +50,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 	</div>
 
 	<div class="center">
-		<div class="search-box">
+		<div class="operation-box">
 			<form action="index.php" method="post">
 				<select id="filter" name="pilihan_fakultas">
 					<option value="all">SEMUA UNIT DAN FAKULTAS</option>
@@ -65,6 +65,9 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 					?>
 				</select>
 				<input type="submit" name="submit" value="Filter">
+				<a href="add.php?operasi=Tambah Barang">
+					<button type="button" class="button">Tambah Barang</button>
+				</a><br/><br/>
 			</form>
 		</div>
 		<table class="tabel" style="text-align: center;" width='100%' border=1>
@@ -90,7 +93,6 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 		}
 		?>
 		</table>
-		<a href="add.php?operasi=Tambah Data">Add New User</a><br/><br/>
 	</div>
 
 
