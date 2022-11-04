@@ -56,7 +56,11 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 					<option value="all">SEMUA UNIT DAN FAKULTAS</option>
 					<?php
 					while($res = mysqli_fetch_array($result_fakultas)) {
-						echo "<option value='".$res['fakultas']."'>".$res['fakultas']."</option>";
+						if ($filter_fakultas == $res['fakultas']) {
+							echo "<option value='".$res['fakultas']."' selected>".$res['fakultas']."</option>";
+						} else {
+							echo "<option value='".$res['fakultas']."'>".$res['fakultas']."</option>";
+						}
 					}
 					?>
 				</select>
