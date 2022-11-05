@@ -27,7 +27,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="..\style\index_barang.css">
+	<link rel="stylesheet" type="text/css"  href="..\style\index_barang.css">
 	<title>Inventaris BMN UIN Sunan Kalijaga</title>
 </head>
 <body>
@@ -49,7 +49,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 		</div>
 	</div>
 
-	<div class="center">
+	<div class="main_content">
 		<div class="operation-box">
 			<form action="index.php" method="post">
 				<select id="filter" name="pilihan_fakultas">
@@ -66,33 +66,35 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 				</select>
 				<input type="submit" name="submit" value="Filter">
 				<a href="add.php?operasi=Tambah Barang">
-					<button type="button" class="button">Tambah Barang</button>
+					<button type="button" id="button" style="background-color: #1D7120; color: #f6f6f6;">+ Tambah Barang</button>
 				</a><br/><br/>
 			</form>
 		</div>
-		<table class="tabel" style="text-align: center;" width='100%' border=1>
-		<tr>
-			<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th> <th>Operasi</th>
-		</tr>
-		<?php
-		$nomor = 1;
-		while ($daftar_barang = mysqli_fetch_array($result)) {
-			echo "<tr>";
-			echo "<td>".$nomor."</td>";
-			echo "<td>".$daftar_barang['kode']."</td>";
-			echo "<td>".$daftar_barang['nama']."</td>";
-			echo "<td>".$daftar_barang['merek']."</td>";
-			echo "<td>".$daftar_barang['jumlah']."</td>";
-			echo "<td>".$daftar_barang['kondisi']."</td>";
-			echo "<td>".$daftar_barang['fakultas']."</td>";
-			echo "<td>".$daftar_barang['lokasi']."</td>";
-			echo "<td>".$daftar_barang['pemakai']."</td>";
-			echo "<td><a href='edit.php?idx=$daftar_barang[idx]&operasi=Ubah Data'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
-			;
-			$nomor++;
-		}
-		?>
-		</table>
+		<div id="tabel_data">
+			<table id="tabel" width='100%' border=1>
+			<tr>
+				<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th> <th>Operasi</th>
+			</tr>
+			<?php
+			$nomor = 1;
+			while ($daftar_barang = mysqli_fetch_array($result)) {
+				echo "<tr>";
+				echo "<td>".$nomor."</td>";
+				echo "<td>".$daftar_barang['kode']."</td>";
+				echo "<td>".$daftar_barang['nama']."</td>";
+				echo "<td>".$daftar_barang['merek']."</td>";
+				echo "<td>".$daftar_barang['jumlah']."</td>";
+				echo "<td>".$daftar_barang['kondisi']."</td>";
+				echo "<td>".$daftar_barang['fakultas']."</td>";
+				echo "<td>".$daftar_barang['lokasi']."</td>";
+				echo "<td>".$daftar_barang['pemakai']."</td>";
+				echo "<td><a href='edit.php?idx=$daftar_barang[idx]&operasi=Ubah Data'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
+				;
+				$nomor++;
+			}
+			?>
+			</table>
+		</div>
 	</div>
 
 

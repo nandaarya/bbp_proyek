@@ -97,64 +97,6 @@ body {
     position:fixed;
 }
 
-.form_login {
-    width: 295px;
-    height: 380px;
-    margin-top: 85px;
-    margin-bottom: 85px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #F6F6F6;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#logo_login {
-    width: 82px;
-    height: 48px;
-    margin-bottom: 8px;
-}
-
-#text_login {
-    text-align: center;
-    margin-bottom: 22px;
-    font-family: cinzel;
-    font-size: 20px;
-    color: #A4884A;
-    font-weight: bold;
-}
-
-#text_login2 {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 13px;
-}
-
-#text_login3 {
-    font-size: 14px;
-    color: #000;
-    font-weight: bold;
-}
-.button_login   {
-    background-size: cover;
-    background-position: center;
-    border: #2F2F2F;
-    border-radius:20px;
-    width: 94px;
-    height: 32px;
-    cursor: pointer;
-    color: blue;
-}
-.text_field_login {
-    margin-bottom: 20px;
-}
-
 /* Input */
 .input {
     width: 980px;
