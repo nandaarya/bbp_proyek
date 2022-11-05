@@ -66,7 +66,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 				</select>
 				<input type="submit" name="submit" value="Filter">
 				<a href="add.php?operasi=Tambah Barang">
-					<button type="button" id="button" style="background-color: #1D7120; color: #f6f6f6;">+ Tambah Barang</button>
+					<button type="button" id="add_button">+ Tambah Barang</button>
 				</a><br/><br/>
 			</form>
 		</div>
