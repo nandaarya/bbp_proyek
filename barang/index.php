@@ -73,7 +73,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 		</div>
 		<div id="tabel_data">
 			<table id="tabel" width='100%' border=1>
-			<tr>
+			<tr style="background-color: #9E7676;">
 				<th style="width:2%">No</th> <th style="width:10%">Kode Barang</th><th style="width:15%">Nama Barang</th> <th style="width:12%">Merek</th> 
 				<th style="width:5%">Jumlah</th> <th style="width:8%">Kondisi</th> <th style="width:25%">Unit / Fakultas</th> <th style="width:10%">Lokasi</th> 
 				<th style="width:8%">Pemakai</th> <th style="width:5%">Operasi</th>
@@ -81,7 +81,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 			<?php
 			$nomor = 1;
 			while ($daftar_barang = mysqli_fetch_array($result)) {
-				echo "<tr>";
+				echo "<tr style='background-color: #FFF8EA;'>";
 				echo "<td>".$nomor."</td>";
 				echo "<td>".$daftar_barang['kode']."</td>";
 				echo "<td>".$daftar_barang['nama']."</td>";
