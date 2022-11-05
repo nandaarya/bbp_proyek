@@ -28,6 +28,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css"  href="..\style\index_barang.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Inventaris BMN UIN Sunan Kalijaga</title>
 </head>
 <body>
@@ -73,7 +74,9 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 		<div id="tabel_data">
 			<table id="tabel" width='100%' border=1>
 			<tr>
-				<th>No</th> <th>Kode Barang</th><th>Nama Barang</th> <th>Merek</th> <th>Jumlah</th> <th>Kondisi</th> <th>Unit / Fakultas</th> <th>Lokasi</th> <th>Pemakai</th> <th>Operasi</th>
+				<th style="width:2%">No</th> <th style="width:10%">Kode Barang</th><th style="width:15%">Nama Barang</th> <th style="width:12%">Merek</th> 
+				<th style="width:5%">Jumlah</th> <th style="width:8%">Kondisi</th> <th style="width:25%">Unit / Fakultas</th> <th style="width:10%">Lokasi</th> 
+				<th style="width:8%">Pemakai</th> <th style="width:5%">Operasi</th>
 			</tr>
 			<?php
 			$nomor = 1;
@@ -88,7 +91,8 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 				echo "<td>".$daftar_barang['fakultas']."</td>";
 				echo "<td>".$daftar_barang['lokasi']."</td>";
 				echo "<td>".$daftar_barang['pemakai']."</td>";
-				echo "<td><a href='edit.php?idx=$daftar_barang[idx]&operasi=Ubah Data'>Edit</a> | <a href='delete.php?idx=$daftar_barang[idx]'>Delete</a></td></tr>"
+				echo "<td><a href='edit.php?idx=$daftar_barang[idx]&operasi=Ubah Data'><i class='fa fa-edit' style='font-size:14px;color:orange'></i></a> 
+				| <a href='delete.php?idx=$daftar_barang[idx]'><i class='fa fa-trash-o' style='font-size:14px;color:red'></i></a></td></tr>"
 				;
 				$nomor++;
 			}
