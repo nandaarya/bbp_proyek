@@ -89,11 +89,31 @@ body {
     min-width: 980px;
 }
 
-.operation-box {
+.user_log {
     display: flex;
     justify-content: space-between;
     margin-right: 15px;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#log_out {
+    font-size: 14px;
+    background-color: rgb(216, 35, 35);
+    color: #f6f6f6;
+    cursor: pointer;
+}
+
+#welcome {
+    font-size: 20px;
+    color: #000;
+}
+
+.operation-box {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -110,7 +130,7 @@ body {
 .tabel_data {
     overflow:hidden;
     overflow-y: scroll;
-    height: 500px;
+    height: 455px;
 }
 
 .tabel_data th {

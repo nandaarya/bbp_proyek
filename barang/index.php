@@ -56,10 +56,14 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 	</div>
 
 	<div class="main_content">
-		<?php echo "Selamat Datang, <b>" . $_SESSION["nickname"] . "</b>. Hak Akses Anda adalah <b>". $_SESSION["role"] ."</b>.";?>
-		<a href="logout.php" class="btn">
-			<button type="button" id="button">Log Out</button>
-		</a>
+		<div class="user_log">
+			<div id="welcome"><?php echo "Selamat Datang, <b>" . $_SESSION["nickname"] . "</b>. Hak Akses Anda adalah <b>". $_SESSION["role"] ."</b>.";?></div>
+			<div>
+				<a href="logout.php" class="btn">
+					<button type="button" id="log_out">Log Out</button>
+				</a>
+			</div>
+		</div>
 		<div class="operation-box">
 			<div class="filter">
 				<form action="index.php" method="post">
