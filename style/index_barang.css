@@ -94,15 +94,20 @@ body {
     color: #f6f6f6;
 }
 
+.tabel_data {
+    overflow:hidden;
+    overflow-y: scroll;
+    height: 500px;
+}
+
 #tabel {
     text-align: center; 
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px; 
-    overflow: scroll; 
-    height: 100%;
 }
 
 .copyright {
+    display: inline-block;
     width: 100%;
     text-align: center;
     color: #696969;
@@ -110,6 +115,6 @@ body {
     height: auto;
     padding-top: 15px;
     padding-bottom: 15px;
-    position:absolute;
+    position: fixed;
     bottom:0;
 }

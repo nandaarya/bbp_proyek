@@ -78,7 +78,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 				</a><br/><br/>
 			</form>
 		</div>
-		<div id="tabel_data">
+		<div class="tabel_data">
 			<table id="tabel" width='100%' border=1>
 			<tr style="background-color: #9E7676;">
 				<th style="width:2%">No</th> <th style="width:10%">Kode Barang</th><th style="width:15%">Nama Barang</th> <th style="width:12%">Merek</th> 
