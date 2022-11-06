@@ -89,7 +89,20 @@ body {
     min-width: 980px;
 }
 
+.operation-box {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#button {
+    cursor: pointer;
+}
+
 #add_button {
+    cursor: pointer;
     background-color: #1D7120; 
     color: #f6f6f6;
 }

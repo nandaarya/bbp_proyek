@@ -58,29 +58,33 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 	<div class="main_content">
 		<?php echo "Selamat Datang, <b>" . $_SESSION["nickname"] . "</b>. Hak Akses Anda adalah <b>". $_SESSION["role"] ."</b>.";?>
 		<a href="logout.php" class="btn">
-			<button type="button" id="logout_button">Log Out</button>
+			<button type="button" id="button">Log Out</button>
 		</a>
 		<div class="operation-box">
-			<form action="index.php" method="post">
-				<select id="filter" name="pilihan_fakultas">
-					<option value="all">SEMUA UNIT DAN FAKULTAS</option>
-					<?php
-					while($res = mysqli_fetch_array($result_fakultas)) {
-						if ($filter_fakultas == $res['fakultas']) {
-							echo "<option value='".$res['fakultas']."' selected>".$res['fakultas']."</option>";
-						} else {
-							echo "<option value='".$res['fakultas']."'>".$res['fakultas']."</option>";
+			<div class="filter">
+				<form action="index.php" method="post">
+					<select id="filter" name="pilihan_fakultas">
+						<option value="all">SEMUA UNIT DAN FAKULTAS</option>
+						<?php
+						while($res = mysqli_fetch_array($result_fakultas)) {
+							if ($filter_fakultas == $res['fakultas']) {
+								echo "<option value='".$res['fakultas']."' selected>".$res['fakultas']."</option>";
+							} else {
+								echo "<option value='".$res['fakultas']."'>".$res['fakultas']."</option>";
+							}
 						}
-					}
-					?>
-				</select>
-				<input type="submit" name="submit" value="Filter">
+						?>
+					</select>
+					<input type="submit" name="submit" id="button" value="Filter">
+				</form>
+			</div>
+			<div class="tambah_data">
 				<?php
-				if ($_SESSION['role'] == "Admin") {
-					echo "<a href='add.php' class='btn'><button type='button' id='add_button'>Tambah Data</button></a>";
-				}
+					if ($_SESSION['role'] == "Admin") {
+						echo "<a href='add.php?operasi=Tambah Barang' class='btn'><button type='button' id='add_button'>+ Tambah Data</button></a>";
+					}
 				?>
-			</form>
+			</div>
 		</div>
 		<div class="tabel_data">
 			<table id="tabel" width='100%' border=1>
