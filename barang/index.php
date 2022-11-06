@@ -57,7 +57,9 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 
 	<div class="main_content">
 		<?php echo "Selamat Datang, <b>" . $_SESSION["nickname"] . "</b>. Hak Akses Anda adalah <b>". $_SESSION["role"] ."</b>.";?>
-		<a href="logout.php" class="btn">Logout</a>
+		<a href="logout.php" class="btn">
+			<button type="button" id="logout_button">Log Out</button>
+		</a>
 		<div class="operation-box">
 			<form action="index.php" method="post">
 				<select id="filter" name="pilihan_fakultas">
@@ -73,9 +75,11 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 					?>
 				</select>
 				<input type="submit" name="submit" value="Filter">
-				<a href="add.php?operasi=Tambah Barang">
-					<button type="button" id="add_button">+ Tambah Barang</button>
-				</a><br/><br/>
+				<?php
+				if ($_SESSION['role'] == "Admin") {
+					echo "<a href='add.php' class='btn'><button type='button' id='add_button'>Tambah Data</button></a>";
+				}
+				?>
 			</form>
 		</div>
 		<div class="tabel_data">
@@ -98,9 +102,12 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 				echo "<td>".$daftar_barang['fakultas']."</td>";
 				echo "<td>".$daftar_barang['lokasi']."</td>";
 				echo "<td>".$daftar_barang['pemakai']."</td>";
+				if ($_SESSION['role'] == 'Admin') {
 				echo "<td><a href='edit.php?idx=$daftar_barang[idx]&operasi=Ubah Data'><i class='fa fa-edit' style='font-size:14px;color:orange'></i></a> 
-				| <a href='delete.php?idx=$daftar_barang[idx]'><i class='fa fa-trash-o' style='font-size:14px;color:red'></i></a></td></tr>"
-				;
+				| <a href='delete.php?idx=$daftar_barang[idx]'><i class='fa fa-trash-o' style='font-size:14px;color:red'></i></a></td></tr>";
+				} else {
+				echo "<td><i class='fa fa-ban' style='font-size:14px;color:red' aria-hidden='true'></i></td></tr>";
+				}
 				$nomor++;
 			}
 			?>
