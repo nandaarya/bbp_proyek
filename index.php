@@ -111,7 +111,7 @@ $cek = mysqli_num_rows($login);
 								</td>
 							</tr>
 						</table>
-						<button type="submit" class="btn btn-primary" name="btn-login">Masuk</button>
+						<button class="button-login" name="btn-login"><img src="assets\images\logo_uin.png" alt="" class="logo-uin">Login</button>
 					</form>
 				</div>
 			</div>
