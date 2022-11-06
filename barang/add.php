@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="..\style\add.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Inventaris BMN UIN Sunan Kalijaga</title>
 </head>
 <body>
@@ -54,34 +55,33 @@ if (isset($_POST['submit'])) {
 	</div>
 
 	<!-- Body -->
-	<div class="input">
+	<div class="input_field">
 		<h1 style="text-align: center;"><?php echo $operasi;?></h1>
-		<a href="index.php">Go to Home</a>
-		<br/><br/>
-		<form action="add.php" method="post" name="input_barang">
-			<table border="0">
+		<br/>
+		<form action="add.php" method="post" name="input_barang" id="input_barang">
+			<table border="0" id="tabel_input">
 				<tr>
 					<td>Kode Barang</td>
-					<td><input type="tel" id="kode" name="kode" pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
+					<td><input type="tel" id="input" name="kode" pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
 					<small>Format: X.XX.XX.XXX</small>
 					</td>
 				</tr>
 				<tr>
 					<td>Nama Barang</td>
-					<td><input type="text" name="nama"></td>
+					<td><input type="text" id="input" name="nama"></td>
 				</tr>
 				<tr>
 					<td>Merek</td>
-					<td><input type="text" name="merek"></td>
+					<td><input type="text" id="input" name="merek"></td>
 				</tr>
 				<tr>
 					<td>Jumlah</td>
-					<td><input type="number" min="1" name="jumlah"></td>
+					<td><input type="number" id="input" min="1" name="jumlah"></td>
 				</tr>
 				<tr>
 					<td>Kondisi</td>
 					<td>
-						<select name="kondisi" id="kondisi">
+						<select name="kondisi" id="input" >
 							<option value="Baik">Baik</option>
 							<option value="Rusak Ringan">Rusak Ringan</option>
 							<option value="Rusak Berat">Rusak Berat</option>
@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
 				<tr>
 					<td>Unit / Fakultas</td>
 					<td>
-						<select name="fakultas" id="fakultas">
+						<select name="fakultas" id="input" >
 							<option value="FAKULTAS ILMU TARBIYAH DAN KEGURUAN">FAKULTAS ILMU TARBIYAH DAN KEGURUAN</option>
 							<option value="FAKULTAS ADAB DAN ILMU BUDAYA">FAKULTAS ADAB DAN ILMU BUDAYA</option>
 							<option value="FAKULTAS EKONOMI DAN BISNIS ISLAM">FAKULTAS EKONOMI DAN BISNIS ISLAM</option>
@@ -114,20 +114,23 @@ if (isset($_POST['submit'])) {
 				</tr>
 				<tr>
 					<td>Lokasi</td>
-					<td><input type="text" name="lokasi"></td>
+					<td><input type="text" id="input"  name="lokasi"></td>
 				</tr>
 				<tr>
 					<td>Pemakai</td>
 					<td>
-						<select name="pemakai" id="pemakai">
+						<select name="pemakai" id="input" >
 							<option value="Mahasiswa">Mahasiswa</option>
 							<option value="Dosen">Dosen</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
-					<td></td>
-					<td><input type="submit" name="submit" value="Add"></td>
+					<td><a href="index.php">
+							<button type="button" id="back_button"><i class="fa fa-arrow-left" style='font-size:14px;color:black' aria-hidden="true"></i> Kembali</button>
+						</a>
+					</td>
+					<td id="save_position"><input type="submit" name="submit" id="save_button" value="Simpan"></td>
 				</tr>
 			</table>
 		</form>
