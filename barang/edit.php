@@ -47,6 +47,7 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="..\style\add.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Inventaris BMN UIN Sunan Kalijaga</title>
 </head>
 <body>
@@ -69,34 +70,33 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 	</div>
 
 	<!-- Body -->
-	<div class="input">
+	<div class="input_field">
 		<h1 style="text-align: center;"><?php echo $operasi;?></h1>
-		<a href="index.php">Go to Home</a>
-		<br/><br/>
-		<form action="edit.php" method="post" name="update_barang">
-			<table border="0">
+		<br/>
+		<form action="edit.php" method="post" name="update_barang" id="input_barang">
+			<table border="0" id="tabel_input">
 				<tr>
 					<td>Kode Barang</td>
-					<td><input type="tel" id="kode" name="kode" value=<?php echo $kode;?> pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
+					<td><input type="tel" id="input" name="kode" value=<?php echo $kode;?> pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
 						<small>Format: X.XX.XX.XXX</small>
 					</td>
 				</tr>
 				<tr>
 					<td>Nama Barang</td>
-					<td><input type="text" name="nama" value=<?php echo $nama;?>></td>
+					<td><input type="text" id="input" name="nama" value=<?php echo $nama;?>></td>
 				</tr>
 				<tr>
 					<td>Merek</td>
-					<td><input type="text" name="merek" value=<?php echo $merek;?>></td>
+					<td><input type="text" id="input" name="merek" value=<?php echo $merek;?>></td>
 				</tr>
 				<tr>
 					<td>Jumlah</td>
-					<td><input type="number" min="1" name="jumlah" value=<?php echo $jumlah;?>></td>
+					<td><input type="number" id="input" min="1" name="jumlah" value=<?php echo $jumlah;?>></td>
 				</tr>
 				<tr>
 					<td>Kondisi</td>
 					<td>
-						<select name="kondisi" id="kondisi">
+						<select name="kondisi" id="input" >
 							<option value="Baik">Baik</option>
 							<option value="Rusak Ringan">Rusak Ringan</option>
 							<option value="Rusak Berat">Rusak Berat</option>
@@ -107,7 +107,7 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 				<tr>
 					<td>Unit / Fakultas</td>
 					<td>
-						<select name="fakultas" id="fakultas">
+						<select name="fakultas" id="input" >
 							<option value="FAKULTAS ILMU TARBIYAH DAN KEGURUAN">FAKULTAS ILMU TARBIYAH DAN KEGURUAN</option>
 							<option value="FAKULTAS ADAB DAN ILMU BUDAYA">FAKULTAS ADAB DAN ILMU BUDAYA</option>
 							<option value="FAKULTAS EKONOMI DAN BISNIS ISLAM">FAKULTAS EKONOMI DAN BISNIS ISLAM</option>
@@ -131,12 +131,12 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 				</tr>
 				<tr>
 					<td>Lokasi</td>
-					<td><input type="text" name="lokasi" value=<?php echo $lokasi;?>></td>
+					<td><input type="text" id="input" name="lokasi" value=<?php echo $lokasi;?>></td>
 				</tr>
 				<tr>
 					<td>Pemakai</td>
 					<td>
-						<select name="pemakai" id="pemakai">
+						<select name="pemakai" id="input" >
 							<option value="Mahasiswa">Mahasiswa</option>
 							<option value="Dosen">Dosen</option>
 						</select>
@@ -144,8 +144,13 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 					</td>
 				</tr>
 				<tr>
-					<td><input type="hidden" name="idx" value=<?php echo $_GET['idx'];?>></td>
-					<td><input type="submit" name="update" value="Update"></td>
+					<td>
+						<a href="index.php">
+							<button type="button" id="back_button"><i class="fa fa-arrow-left" style='font-size:14px;color:black' aria-hidden="true"></i> Kembali</button>
+						</a>
+						<input type="hidden" name="idx" value=<?php echo $_GET['idx'];?>>
+					</td>
+					<td id="save_position"><input type="submit" name="update" id="save_button" value="Simpan"></td>
 				</tr>
 			</table>
 		</form>
