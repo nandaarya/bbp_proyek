@@ -141,6 +141,13 @@ body {
     color: #000;
     font-weight: bold;
 }
+
+#div_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .button_login   {
     background-size: cover;
     background-position: center;
