@@ -2,23 +2,6 @@
 session_start();
 include 'dbconnect.php';
 
-// if(isset($_SESSION['role'])){
-// header("location:barang");
-// }
-
-// if(isset($_GET['pesan'])){
-// 		if($_GET['pesan'] == "gagal"){
-// 			echo "Username atau Password salah!";
-// 		}else if($_GET['pesan'] == "logout"){
-// 			echo "Anda berhasil keluar dari sistem";
-// 		}else if($_GET['pesan'] == "belum_login"){
-// 			echo "Anda harus Login";
-// 		}else if($_GET['pesan'] == "noaccess"){
-// 			echo "Akses Ditutup";
-// 	}
-// }
-
-
 if(isset($_POST['btn-login'])){
  $uname = mysqli_real_escape_string($conn,$_POST['username']);
  $upass = mysqli_real_escape_string($conn,$_POST['password']);

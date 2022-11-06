@@ -16,15 +16,7 @@ if (isset($_POST['submit'])) {
 } else {
 	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
 }
-// switch ($filter_fakultas) {
-//   case "$filter_fakultas":
-// 	$result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$filter_fakultas'");
-// 	break;
-//   default:
-//   	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
-// }
 
-// $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC"); // fetch all users data from database
 $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORDER BY fakultas ASC");
 ?>
 <!DOCTYPE html>
