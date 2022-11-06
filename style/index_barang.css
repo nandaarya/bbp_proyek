@@ -100,6 +100,13 @@ body {
     height: 500px;
 }
 
+.tabel_data th {
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    background-color: #9E7676;
+ }
+
 #tabel {
     text-align: center; 
     font-family: 'Courier New', Courier, monospace;
