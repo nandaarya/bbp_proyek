@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../dbconnect.php';
 
 if (isset($_POST['submit'])) {
@@ -51,6 +52,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 	</div>
 
 	<div class="main_content">
+		<?php echo "Selamat Datang, " . $_SESSION["nickname"] . ". Hak Akses Anda adalah ". $_SESSION["role"] .".";?>
 		<div class="operation-box">
 			<form action="index.php" method="post">
 				<select id="filter" name="pilihan_fakultas">

@@ -6,17 +6,17 @@ include 'dbconnect.php';
 // header("location:barang");
 // }
 
-if(isset($_GET['pesan'])){
-		if($_GET['pesan'] == "gagal"){
-			echo "Username atau Password salah!";
-		}else if($_GET['pesan'] == "logout"){
-			echo "Anda berhasil keluar dari sistem";
-		}else if($_GET['pesan'] == "belum_login"){
-			echo "Anda harus Login";
-		}else if($_GET['pesan'] == "noaccess"){
-			echo "Akses Ditutup";
-	}
-}
+// if(isset($_GET['pesan'])){
+// 		if($_GET['pesan'] == "gagal"){
+// 			echo "Username atau Password salah!";
+// 		}else if($_GET['pesan'] == "logout"){
+// 			echo "Anda berhasil keluar dari sistem";
+// 		}else if($_GET['pesan'] == "belum_login"){
+// 			echo "Anda harus Login";
+// 		}else if($_GET['pesan'] == "noaccess"){
+// 			echo "Akses Ditutup";
+// 	}
+// }
 
 
 if(isset($_POST['btn-login'])){
@@ -29,22 +29,17 @@ $login = mysqli_query($conn,"select * from login where username='$uname' and pas
 $cek = mysqli_num_rows($login);
  
 // cek apakah username dan password di temukan pada database
-if($cek > 0){
- 
-	$data = mysqli_fetch_assoc($login);
- 
- if($data['role']=="admin"){
-		// buat session login dan username
-		$_SESSION['user'] = $data['nickname'];
-		$_SESSION['user_login'] = $data['username'];
+	if($cek > 0){
+		
+		$data = mysqli_fetch_assoc($login);
+		$_SESSION['nickname'] = $data['nickname'];
+		$_SESSION['username'] = $data['username'];
 		$_SESSION['id'] = $data['id'];
-		$_SESSION['role'] = "admin";
+		$_SESSION['role'] = $data['role'];
 		header("location:barang");
- }
- else{
-  header("location:index.php?pesan=gagal");
- }
-}
+	} else {
+		echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+	}
 }
 ?>
 
