@@ -1,4 +1,7 @@
 <?php
+if (! isset($_SESSION['role'])) {
+	header("location:../index.php");
+}
 // include databse connection file
 include '../dbconnect.php';
 

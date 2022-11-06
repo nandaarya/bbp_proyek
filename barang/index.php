@@ -2,6 +2,10 @@
 session_start();
 include '../dbconnect.php';
 
+if (! isset($_SESSION['role'])) {
+	header("location:../index.php");
+}
+
 if (isset($_POST['submit'])) {
 	$filter_fakultas = $_POST['pilihan_fakultas'];
 	if ($filter_fakultas == "all") {
@@ -52,7 +56,7 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 	</div>
 
 	<div class="main_content">
-		<?php echo "Selamat Datang, " . $_SESSION["nickname"] . ". Hak Akses Anda adalah ". $_SESSION["role"] .".";?>
+		<?php echo "Selamat Datang, <b>" . $_SESSION["nickname"] . "</b>. Hak Akses Anda adalah <b>". $_SESSION["role"] ."</b>.";?>
 		<a href="logout.php" class="btn">Logout</a>
 		<div class="operation-box">
 			<form action="index.php" method="post">
