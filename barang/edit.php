@@ -23,7 +23,6 @@ if (isset($_POST['update'])) {
 }
 ?>
 <?php
-// Display selected user data based on id
 // Getting id from url
 $idx = $_GET['idx'];
 $operasi = $_GET['operasi'];
