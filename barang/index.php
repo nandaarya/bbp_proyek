@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
 	}	
 } else {
 	$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+	$filter_fakultas= "all";
 }
 
 $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORDER BY fakultas ASC");

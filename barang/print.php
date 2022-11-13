@@ -6,7 +6,14 @@ if (! isset($_SESSION['role'])) {
 }
 
 include '../dbconnect.php';
-$result = $_GET['fakultas'];
+
+$fakultas = $_GET['fakultas'];
+
+if ($fakultas == "all") {
+    $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+} else {
+    $result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$fakultas'");
+}
 
 ?>
 
