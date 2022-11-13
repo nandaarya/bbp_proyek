@@ -11,8 +11,10 @@ $fakultas = $_GET['fakultas'];
 
 if ($fakultas == "all") {
     $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
+    $nama_fakultas = "SEMUA UNIT DAN FAKULTAS";
 } else {
     $result = mysqli_query($conn, "SELECT * FROM barang WHERE fakultas = '$fakultas'");
+    $nama_fakultas = $fakultas;
 }
 
 ?>
@@ -20,6 +22,9 @@ if ($fakultas == "all") {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css"  href="..\style\index_barang.css">
 	<title>CETAK DATA</title>
 </head>
 <body>
@@ -27,14 +32,14 @@ if ($fakultas == "all") {
 	<center>
  
 		<h2>DATA INVENTARIS BMN UIN SUNAN KALIJAGA</h2>
-		<h4></h4>
+		<?php echo"<h3>$nama_fakultas</h3>"?>
  
 	</center>
  
     <table id="tabel" width='100%' border=1>
 			<tr>
 				<th style="width:2%">No</th> <th style="width:10%">Kode Barang</th><th style="width:15%">Nama Barang</th> <th style="width:12%">Merek</th> 
-				<th style="width:5%">Jumlah</th> <th style="width:8%">Kondisi</th> <th style="width:25%">Unit / Fakultas</th> <th style="width:10%">Lokasi</th> 
+				<th style="width:5%">Jumlah</th> <th style="width:8%">Kondisi</th> <th style="width:30%">Unit / Fakultas</th> <th style="width:10%">Lokasi</th> 
 				<th style="width:8%">Pemakai</th>
 			</tr>
 			<?php
