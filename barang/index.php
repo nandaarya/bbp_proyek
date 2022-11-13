@@ -74,12 +74,21 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 					<input type="submit" name="submit" id="button" value="Filter">
 				</form>
 			</div>
-			<div class="tambah_data">
-				<?php
-					if ($_SESSION['role'] == "Admin") {
-						echo "<a href='add.php?operasi=Tambah Barang' class='btn'><button type='button' id='add_button'>+ Tambah Data</button></a>";
-					}
-				?>
+			<div class="fitur_admin">
+				<div class="cetak_data">
+					<?php
+						if ($_SESSION['role'] == "Admin") {
+							echo "<a href='print.php?fakultas=$filter_fakultas' target='_blank'>CETAK</a>";
+						}
+					?>
+				</div>
+				<div class="tambah_data">
+					<?php
+						if ($_SESSION['role'] == "Admin") {
+							echo "<a href='add.php?operasi=Tambah Barang' class='btn'><button type='button' id='add_button'>+ Tambah Data</button></a>";
+						}
+					?>
+				</div>
 			</div>
 		</div>
 		<div class="tabel_data">
