@@ -25,7 +25,7 @@ if ($fakultas == "all") {
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css"  href="..\style\index_barang.css">
-	<title>CETAK DATA</title>
+	<title>DATA BMN <?php echo $nama_fakultas?> UIN SUNAN KALIJAGA</title>
 </head>
 <body>
  
