@@ -79,14 +79,16 @@ $result_fakultas = mysqli_query($conn, "SELECT DISTINCT fakultas FROM barang ORD
 				<div class="cetak_data">
 					<?php
 						if ($_SESSION['role'] == "Admin") {
-							echo "<a href='print.php?fakultas=$filter_fakultas' target='_blank'>CETAK</a>";
+							echo "<a href='print.php?fakultas=$filter_fakultas' target='_blank'><button type='button' id='button'>
+							<i class='fa fa-print' style='font-size:12px' aria-hidden='true'></i> Cetak Data</button></a>";
 						}
 					?>
 				</div>
 				<div class="tambah_data">
 					<?php
 						if ($_SESSION['role'] == "Admin") {
-							echo "<a href='add.php?operasi=Tambah Barang' class='btn'><button type='button' id='add_button'>+ Tambah Data</button></a>";
+							echo "<a href='add.php?operasi=Tambah Barang' class='btn'><button type='button' id='add_button'>
+							<i class='fa fa-plus' style='font-size:12px' aria-hidden='true'></i> Tambah Data</button></a>";
 						}
 					?>
 				</div>

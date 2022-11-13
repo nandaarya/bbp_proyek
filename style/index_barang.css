@@ -118,7 +118,7 @@ body {
 }
 
 .fitur_admin {
-    width: 15%;
+    width: 220px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
