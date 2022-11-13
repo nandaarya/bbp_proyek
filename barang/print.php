@@ -7,7 +7,7 @@ if (! isset($_SESSION['role'])) {
 
 include '../dbconnect.php';
 
-$fakultas = $_GET['fakultas'];
+$fakultas = $_GET['fakultas'] ?? "all";
 
 if ($fakultas == "all") {
     $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY idx ASC");
