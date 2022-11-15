@@ -23,8 +23,9 @@ if (isset($_POST['update'])) {
 }
 ?>
 <?php
-// Getting id from url
+// Getting idx from url
 $idx = $_GET['idx'];
+// Getting operasi from url
 $operasi = $_GET['operasi'];
 // Fetech user data based on id
 $result = mysqli_query($conn, "SELECT * FROM barang WHERE idx=$idx");

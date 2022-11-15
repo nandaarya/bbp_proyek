@@ -21,8 +21,7 @@ if (isset($_POST['submit'])) {
 	$pemakai = $_POST['pemakai'];
 	// Insert user data into table
 	$result = mysqli_query($conn, "INSERT INTO barang(kode,nama,merek,jumlah,kondisi,fakultas,lokasi,pemakai) VALUES('$kode','$nama','$merek','$jumlah','$kondisi','$fakultas','$lokasi','$pemakai')");
-	// // show message when user added
-	// echo "User added successfully";
+	// Back to index.php after insert
 	header("Location: index.php");
 }
 ?>
