@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (! isset($_SESSION['role'])) {
+if (!isset($_SESSION['role'])) {
 	header("location:../index.php");
 }
 
@@ -42,7 +42,8 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,6 +51,7 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Inventaris BMN UIN Sunan Kalijaga</title>
 </head>
+
 <body>
 	<!-- Header -->
 	<div class="app_header-top"></div>
@@ -71,50 +73,56 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 
 	<!-- Body -->
 	<div class="input_field">
-		<h1 style="text-align: center;"><?php echo $operasi;?></h1>
-		<br/>
+		<h1 style="text-align: center;">
+			<?php echo $operasi; ?>
+		</h1>
+		<br />
 		<form action="edit.php" method="post" name="update_barang" id="input_barang">
 			<table border="0" id="tabel_input">
 				<tr>
 					<td>Kode Barang</td>
-					<td><input type="tel" id="input" name="kode" value=<?php echo $kode;?> pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
+					<td><input type="tel" id="input" name="kode" value=<?php echo $kode; ?>
+							pattern="[0-9]{1}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{3}" required>
 						<small>Format: X.XX.XX.XXX</small>
 					</td>
 				</tr>
 				<tr>
 					<td>Nama Barang</td>
-					<td><input type="text" id="input" name="nama" value=<?php echo $nama;?>></td>
+					<td><input type="text" id="input" name="nama" value=<?php echo $nama; ?>></td>
 				</tr>
 				<tr>
 					<td>Merek</td>
-					<td><input type="text" id="input" name="merek" value=<?php echo $merek;?>></td>
+					<td><input type="text" id="input" name="merek" value=<?php echo $merek; ?>></td>
 				</tr>
 				<tr>
 					<td>Jumlah</td>
-					<td><input type="number" id="input" min="1" name="jumlah" value=<?php echo $jumlah;?>></td>
+					<td><input type="number" id="input" min="1" name="jumlah" value=<?php echo $jumlah; ?>></td>
 				</tr>
 				<tr>
 					<td>Kondisi</td>
 					<td>
-						<select name="kondisi" id="input" >
+						<select name="kondisi" id="input">
 							<option value="Baik">Baik</option>
 							<option value="Rusak Ringan">Rusak Ringan</option>
 							<option value="Rusak Berat">Rusak Berat</option>
 						</select>
-						<small>Pilihan Sebelumnya: <?php echo $kondisi;?></small>
+						<small>Pilihan Sebelumnya: <?php echo $kondisi; ?></small>
 					</td>
 				</tr>
 				<tr>
 					<td>Unit / Fakultas</td>
 					<td>
-						<select name="fakultas" id="input" >
-							<option value="FAKULTAS ILMU TARBIYAH DAN KEGURUAN">FAKULTAS ILMU TARBIYAH DAN KEGURUAN</option>
+						<select name="fakultas" id="input">
+							<option value="FAKULTAS ILMU TARBIYAH DAN KEGURUAN">FAKULTAS ILMU TARBIYAH DAN KEGURUAN
+							</option>
 							<option value="FAKULTAS ADAB DAN ILMU BUDAYA">FAKULTAS ADAB DAN ILMU BUDAYA</option>
 							<option value="FAKULTAS EKONOMI DAN BISNIS ISLAM">FAKULTAS EKONOMI DAN BISNIS ISLAM</option>
 							<option value="FAKULTAS SAINS DAN TEKNOLOGI">FAKULTAS SAINS DAN TEKNOLOGI</option>
-							<option value="FAKULTAS USHULUDDIN DAN PEMIKIRAN ISLAM">FAKULTAS USHULUDDIN DAN PEMIKIRAN ISLAM</option>
+							<option value="FAKULTAS USHULUDDIN DAN PEMIKIRAN ISLAM">FAKULTAS USHULUDDIN DAN PEMIKIRAN
+								ISLAM</option>
 							<option value="FAKULTAS DAKWAH DAN KOMUNIKASI">FAKULTAS DAKWAH DAN KOMUNIKASI</option>
-							<option value="FAKULTAS ILMU SOSIAL DAN HUMANIORA">FAKULTAS ILMU SOSIAL DAN HUMANIORA</option>
+							<option value="FAKULTAS ILMU SOSIAL DAN HUMANIORA">FAKULTAS ILMU SOSIAL DAN HUMANIORA
+							</option>
 							<option value="FAKULTAS SYARI’AH DAN HUKUM">FAKULTAS SYARI’AH DAN HUKUM</option>
 							<option value="PASCASARJANA">PASCASARJANA</option>
 							<option value="UPT PUSAT PERPUSTAKAAN">UPT PUSAT PERPUSTAKAAN</option>
@@ -126,29 +134,30 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 							<option value="LPM">LPM</option>
 							<option value="SPI">SPI</option>
 						</select>
-						<small>Pilihan Sebelumnya: <?php echo $fakultas;?></small>
+						<small>Pilihan Sebelumnya: <?php echo $fakultas; ?></small>
 					</td>
 				</tr>
 				<tr>
 					<td>Lokasi</td>
-					<td><input type="text" id="input" name="lokasi" value=<?php echo $lokasi;?>></td>
+					<td><input type="text" id="input" name="lokasi" value=<?php echo $lokasi; ?>></td>
 				</tr>
 				<tr>
 					<td>Pemakai</td>
 					<td>
-						<select name="pemakai" id="input" >
+						<select name="pemakai" id="input">
 							<option value="Mahasiswa">Mahasiswa</option>
 							<option value="Dosen">Dosen</option>
 						</select>
-						<small>Pilihan Sebelumnya: <?php echo $pemakai;?></small>
+						<small>Pilihan Sebelumnya: <?php echo $pemakai; ?></small>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<a href="index.php">
-							<button type="button" id="back_button"><i class="fa fa-arrow-left" style='font-size:14px;color:black' aria-hidden="true"></i> Kembali</button>
+							<button type="button" id="back_button"><i class="fa fa-arrow-left"
+									style='font-size:14px;color:black' aria-hidden="true"></i> Kembali</button>
 						</a>
-						<input type="hidden" name="idx" value=<?php echo $_GET['idx'];?>>
+						<input type="hidden" name="idx" value=<?php echo $_GET['idx']; ?>>
 					</td>
 					<td id="save_position"><input type="submit" name="update" id="save_button" value="Simpan"></td>
 				</tr>
@@ -157,7 +166,7 @@ while ($daftar_barang = mysqli_fetch_array($result)) {
 	</div>
 
 	<!-- Footer -->
-	<div class="copyright" style="background-color: #f6f6f6; border-top: 1px solid #dddddd;"> 
+	<div class="copyright" style="background-color: #f6f6f6; border-top: 1px solid #dddddd;">
 		© 2022 - Pusat Teknologi Informasi dan Pangkalan Data, UIN Sunan Kalijaga, Yogyakarta
 	</div>
 </body>
