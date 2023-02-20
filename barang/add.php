@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Checking user role
 if (!isset($_SESSION['role'])) {
 	header("location:../index.php");
 }
