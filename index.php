@@ -6,9 +6,7 @@ if(isset($_POST['btn-login'])){
  $uname = mysqli_real_escape_string($conn,$_POST['username']);
  $upass = mysqli_real_escape_string($conn,$_POST['password']);
 
- // menyeleksi data user dengan username dan password yang sesuai
 $login = mysqli_query($conn,"select * from login where username='$uname' and password='$upass';");
-// menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
  
 // cek apakah username dan password di temukan pada database

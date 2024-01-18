@@ -1,8 +1,7 @@
 # bbp_proyek
+a website to store inventory data
 
-Web ini dibuat dengan 95% native html, php dan css dengan tambahan beberapa element yang dibuat di bootstrap.
-Masih banyak kekurangan dan fitur yang dapat dikembangkan di web ini. Open PR :).
-
+## Guide
 Cara Eksekusi Web dengan bantuan XAMPP
 1. Download file project bbp_proyek ini dalam bentuk zip atau bisa langsung clone di code editor kalian masing-masing.
 2. Letakan folder project yang telah didownload di dalam folder htdocs XAMPP
